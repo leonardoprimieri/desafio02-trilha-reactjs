@@ -18,6 +18,7 @@ function MovieCardComponent(props: MovieCardProps) {
       <div>
         <div className="movie-info">
           <span>{props.title}</span>
+
           <div className="meta">
             <div>
               <Star /> {props.rating}
@@ -33,4 +34,6 @@ function MovieCardComponent(props: MovieCardProps) {
   );
 }
 
-export const MovieCard = memo(MovieCardComponent);
+export const MovieCard = memo(MovieCardComponent, (prevProps, nextProps) => {
+  return Object.is(prevProps.title, nextProps.title);
+});
