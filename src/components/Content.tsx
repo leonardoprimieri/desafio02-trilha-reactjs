@@ -22,7 +22,6 @@ interface ContentProps {
 export function Content(props: ContentProps) {
   return (
     <>
-      <h1>Content</h1>
       <Header title={props.selectedGenre.title} />
       <main>
         <div className="movies-list">
